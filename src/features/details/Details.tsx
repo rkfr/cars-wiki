@@ -1,5 +1,5 @@
 function Details() {
-    return <div>Details Component</div>;
+  return <div>Details Component</div>;
 }
 
 export default Details;

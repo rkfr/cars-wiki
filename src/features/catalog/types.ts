@@ -1,4 +1,4 @@
-import type { Picture } from "../../types";
+import type { Picture } from '../../types';
 
 export interface CatalogItem {
   id: string;

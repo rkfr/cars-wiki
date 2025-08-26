@@ -1,11 +1,8 @@
+import { Catalog } from '../features/catalog';
 import './App.scss';
-import { Catalog } from '../features/catalog'
 
 function App() {
-
-  return (
-    <Catalog />
-  )
+  return <Catalog />;
 }
 
-export default App
+export default App;

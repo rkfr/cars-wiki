@@ -1,5 +1,5 @@
 export type Picture = {
-    alt: string;
-    ext: string;
-    id: string;
+  alt: string;
+  ext: string;
+  id: string;
 };
