@@ -1,2 +1,1 @@
-export * from './Catalog';
-export { default } from './Catalog';
+export { Catalog } from './components/Catalog';
