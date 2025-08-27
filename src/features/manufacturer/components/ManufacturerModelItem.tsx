@@ -1,29 +1,27 @@
-import type { CatalogItem } from '../types';
-
 import {
+  Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
   Typography,
 } from '@mui/material';
-import Button from '@mui/material/Button';
-
 import { useNavigate } from 'react-router';
 import { API_CONFIG } from '../../../config';
+import type { ManufacturerModel } from '../types';
 
 type Props = {
-  brand: CatalogItem;
+  model: ManufacturerModel;
 };
 
-export function CatalogManufacturer({ brand }: Props) {
-  const src: string = `${API_CONFIG.contentBasePath}/${brand.logo.id + brand.logo.ext}`;
+export function ManufacturerModelItem({ model }: Props) {
+  const src: string = `${API_CONFIG.contentBasePath}/${model.image.id + model.image.ext}`;
   const navigate = useNavigate();
 
   return (
     <Card
       sx={{
-        maxWidth: 180,
+        maxWidth: 300,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -32,21 +30,28 @@ export function CatalogManufacturer({ brand }: Props) {
     >
       <CardMedia
         sx={{
-          height: 40,
-          width: 40,
+          height: 90,
+          width: 120,
         }}
         image={src}
-        title={brand.logo.alt}
+        title={model.image.alt}
       />
       <CardContent>
-        <Typography gutterBottom component="p">
-          {brand.name}
+        <Typography gutterBottom variant="h5" component="p">
+          {model.name}
+        </Typography>
+        <Typography
+          variant="body2"
+          component="p"
+          sx={{ color: 'text.secondary' }}
+        >
+          {model.productionYears}
         </Typography>
       </CardContent>
       <CardActions>
         <Button
           size="small"
-          onClick={() => navigate(`/manufacturer/${brand.id}`)}
+          onClick={() => navigate(`/generation/${model.id}`)}
         >
           Show
         </Button>

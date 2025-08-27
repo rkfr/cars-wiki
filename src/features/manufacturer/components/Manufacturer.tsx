@@ -1,17 +1,18 @@
-import type { CatalogItem, CatalogSection } from '../types';
-
 import { Box, Grid, Typography } from '@mui/material';
-
 import { useLoaderData } from 'react-router';
 import type { LoaderResult } from '../../../types';
-import { CatalogManufacturer } from './CatalogBrand';
+import type { ManufacturerModel, ManufacturerSection } from '../types';
+import { ManufacturerModelItem } from './ManufacturerModelItem';
 
-export function Catalog() {
-  const { data: catalog } = useLoaderData<LoaderResult<CatalogSection[]>>();
+export function Manufacturer() {
+  const { data: manufacturer } =
+    useLoaderData<LoaderResult<ManufacturerSection[]>>();
+
+  console.log(manufacturer);
 
   return (
     <div>
-      {catalog.map((section: CatalogSection) => (
+      {manufacturer.map((section: ManufacturerSection) => (
         <Box
           key={section.letter}
           component="section"
@@ -28,9 +29,9 @@ export function Catalog() {
             </Grid>
 
             <Grid container size={12} spacing={2}>
-              {section.brands.map((brand: CatalogItem) => (
+              {section.models.map((model: ManufacturerModel) => (
                 <Grid
-                  key={brand.id}
+                  key={model.id}
                   size={{
                     xs: 6,
                     sm: 4,
@@ -38,7 +39,7 @@ export function Catalog() {
                     lg: 1,
                   }}
                 >
-                  <CatalogManufacturer brand={brand} />
+                  <ManufacturerModelItem model={model} />
                 </Grid>
               ))}
             </Grid>
@@ -48,3 +49,5 @@ export function Catalog() {
     </div>
   );
 }
+
+export default Manufacturer;
