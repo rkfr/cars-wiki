@@ -18,7 +18,6 @@ type Props = {
 function ModelGenerationItem({ generation }: Props) {
   const src: string = `${API_CONFIG.contentBasePath}/${generation.image.id + generation.image.ext}`;
   const navigate = useNavigate();
-  console.log(generation);
 
   return (
     <CardActionArea

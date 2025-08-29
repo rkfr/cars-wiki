@@ -12,14 +12,7 @@ export function Catalog() {
   return (
     <div>
       {catalog.map((section: CatalogSection) => (
-        <Box
-          key={section.letter}
-          component="section"
-          sx={{
-            p: 2,
-            border: '1px dashed grey',
-          }}
-        >
+        <Box key={section.letter} component="section">
           <Grid container>
             <Grid size={12}>
               <Typography variant="h3" component="h3">
@@ -34,8 +27,7 @@ export function Catalog() {
                   size={{
                     xs: 6,
                     sm: 4,
-                    md: 2,
-                    lg: 1,
+                    lg: 2,
                   }}
                 >
                   <CatalogManufacturer brand={brand} />

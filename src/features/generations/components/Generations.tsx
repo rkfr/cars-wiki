@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import { useLoaderData } from 'react-router';
 import type { LoaderResult } from '../../../types';
 import type { ModelGeneration } from '../types';
@@ -8,10 +8,8 @@ function Generations() {
   const { data: generations } =
     useLoaderData<LoaderResult<ModelGeneration[]>>();
 
-  console.log(generations);
-
   return (
-    <div>
+    <Grid container justifyContent="center">
       {generations.map((item) => (
         <Box
           key={item.id}
@@ -23,7 +21,7 @@ function Generations() {
           <ModelGenerationItem generation={item} />
         </Box>
       ))}
-    </div>
+    </Grid>
   );
 }
 

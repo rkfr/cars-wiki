@@ -35,21 +35,6 @@ export default tseslint.config([
         'error',
         { allowAllPropertiesOnSameLine: false },
       ],
-      'object-curly-newline': [
-        'error',
-        {
-          ObjectExpression: {
-            multiline: true,
-            minProperties: 3,
-            consistent: true,
-          },
-          ObjectPattern: {
-            multiline: true,
-            minProperties: 3,
-            consistent: true,
-          },
-        },
-      ],
     },
   },
 ]);

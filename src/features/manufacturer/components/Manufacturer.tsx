@@ -8,20 +8,11 @@ export function Manufacturer() {
   const { data: manufacturer } =
     useLoaderData<LoaderResult<ManufacturerSection[]>>();
 
-  console.log(manufacturer);
-
   return (
-    <div>
+    <Grid container flexDirection="column" gap={2} spacing={2}>
       {manufacturer.map((section: ManufacturerSection) => (
-        <Box
-          key={section.letter}
-          component="section"
-          sx={{
-            p: 2,
-            border: '1px dashed grey',
-          }}
-        >
-          <Grid container>
+        <Box key={section.letter} component="section">
+          <Grid container spacing={2} size={12}>
             <Grid size={12}>
               <Typography variant="h3" component="h3">
                 {section.letter}
@@ -33,10 +24,9 @@ export function Manufacturer() {
                 <Grid
                   key={model.id}
                   size={{
-                    xs: 6,
-                    sm: 4,
-                    md: 2,
-                    lg: 1,
+                    xs: 12,
+                    sm: 6,
+                    lg: 2,
                   }}
                 >
                   <ManufacturerModelItem model={model} />
@@ -46,7 +36,7 @@ export function Manufacturer() {
           </Grid>
         </Box>
       ))}
-    </div>
+    </Grid>
   );
 }
 
