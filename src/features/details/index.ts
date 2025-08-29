@@ -1,2 +1,2 @@
-export * from './Details';
-export { default } from './Details';
+export { Details } from './components/Details';
+export { detailsLoader } from './details.loader';

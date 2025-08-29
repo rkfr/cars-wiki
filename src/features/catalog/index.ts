@@ -1,2 +1,2 @@
-export * from './Catalog';
-export { default } from './Catalog';
+export { catalogLoader } from './catalog.loader';
+export { Catalog } from './components/Catalog';

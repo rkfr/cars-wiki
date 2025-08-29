@@ -1,2 +1,2 @@
-export * from './Manufacturer';
-export { default } from './Manufacturer';
+export { Manufacturer } from './components/Manufacturer';
+export { manufacturerLoader } from './manufacturer.loader';

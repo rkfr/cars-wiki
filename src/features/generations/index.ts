@@ -1,2 +1,2 @@
-export * from './Generations';
-export { default } from './Generations';
+export { default } from './components/Generations';
+export { generationLoader } from './generations.loader';
